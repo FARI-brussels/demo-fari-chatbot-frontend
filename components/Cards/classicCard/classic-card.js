@@ -8,8 +8,10 @@ const ImageCard = ({
     handlePathValueClick,
     handleSelectedOutput,
     selectedInputType,
-    task,
-    selectedOutputType }) => {
+    selectedOutputType,
+    title, 
+    description,
+     }) => {
 
     const router = useRouter();
 
@@ -31,8 +33,8 @@ const ImageCard = ({
         <div onClick={handleSelectedInput} className={styles.container} >
             <div onClick={handlePathValueClick} className={cls(styles.iconContainer, { [styles.selected]: selectedInputType })}>
                 
-                    <h3 className={styles.exampleParagraph}>Classic Chatbot</h3>
-                    <p className={styles.exampleText}>This chatbot lets you have a conversation and ask any questions</p>
+                    <h3 className={styles.exampleParagraph}>{title}</h3>
+                    <p className={styles.exampleText}>{description}</p>
                 
                 <div className={styles.secondColorDiv}>
                     <Image

@@ -36,6 +36,7 @@ export default function Home({ setNextPageHref, languages }) {
 
     const fetchDataAndUpdateState = async () => {
       const response = await fetchGenerativeAi(languages);
+      console.log(response)
       setTranslation(response?.data);
     };
 
@@ -65,19 +66,21 @@ export default function Home({ setNextPageHref, languages }) {
             handleSelectedInput={() => handleSelectedInput('classic')}
             selectedInputType={selectedInputType === 'classic'}
             handlePathValueClick={() => handlePathValueClick(0)}
+            title= {translation && translation.attributes.chatbot.classic_chatbot.title}
+            description =  {translation && translation.attributes.chatbot.classic_chatbot.description}
           />
-          <Image
-            handleSelectedInput={() => handleSelectedInput('image')}
-            selectedInputType={selectedInputType === 'image'}
-            handlePathValueClick={() => handlePathValueClick(1)}
-          />
+          
           <Pdf
             handleSelectedInput={() => handleSelectedInput('pdf')}
             selectedInputType={selectedInputType === 'pdf'}
             handlePathValueClick={() => handlePathValueClick(2)}
+            title= {translation && translation.attributes.chatbot.pdf_chatbot.title}
+            description =  {translation && translation.attributes.chatbot.pdf_chatbot.description}
           />
         </div>
       </div>
     </>
   )
 };
+
+

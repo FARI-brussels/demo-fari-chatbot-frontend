@@ -39,7 +39,7 @@ function Pdf4({ languages }) {
                         </div>
                         <div className={styles.gridItem}>
                             <p className={styles.inputHeader}>Ask any question about this pdf</p>
-                            <ChatInterface/>
+                            <ChatInterface languages={languages}/>
                         </div>
                     </div>
                 </div>

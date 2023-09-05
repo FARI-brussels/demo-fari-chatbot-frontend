@@ -21,7 +21,6 @@ function Pdf1({ languages }) {
         fetchDataAndUpdateState();
     }, [languages]);
 
-    console.log(translatedData)
     return (
         <>
             {loading ? (<Loading />) : (
@@ -39,7 +38,7 @@ function Pdf1({ languages }) {
                         </div>
                         <div className={styles.gridItem}>
                             <p className={styles.inputHeader}>Ask any question about this pdf</p>
-                            <ChatInterface/>
+                            <ChatInterface languages={languages}/>
                         </div>
                     </div>
                 </div>

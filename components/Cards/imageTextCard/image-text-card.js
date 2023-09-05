@@ -3,15 +3,15 @@ import Image from 'next/image';
 import cls from 'classnames';
 
 
-const ImageTextCard = ({ handleSelectedInput, selectedInputType, handlePathValueClick }) => {
+const ImageTextCard = ({ handleSelectedInput, selectedInputType, handlePathValueClick, title, description }) => {
 
 
     return (
         <div onClick={handleSelectedInput} className={styles.container} >
             <div onClick={handlePathValueClick} className={cls(styles.iconContainer, { [styles.selected]: selectedInputType })}>
                 
-                    <h3 className={styles.exampleParagraph}>Image Chatbot</h3>
-                    <p className={styles.exampleText}>Ask any questions about an image that you chose</p>
+                    <h3 className={styles.exampleParagraph}>{title}</h3>
+                    <p className={styles.exampleText}>{description}</p>
                 
                 <div className={styles.secondColorDiv}>
                     <Image

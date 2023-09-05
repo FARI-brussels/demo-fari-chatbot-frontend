@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import styles from './chat.module.css';
+import { fetchData, fetchGenerativeAi } from '../../../api/axios';
+
 
 const API_BASE_URL = 'http://46.226.110.124:5000';
 
-const ChatInterface = () => {
+const ChatInterface = ({ languages }) => {
   const [conversationId, setConversationId] = useState(null);
   const [inputMessage, setInputMessage] = useState('');
   const [messages, setMessages] = useState([]);
@@ -18,12 +20,15 @@ const ChatInterface = () => {
 
   useEffect(() => {
     const initiateConversation = async () => {
+      const translationData = await fetchGenerativeAi(languages);
+      console.log(translationData)
       try {
-        const response = await axios.get(`${API_BASE_URL}/initiate?pdf_url=https://www.mass.gov/doc/masstaxconnect-free-file-instructions/download`);
+        const response = await axios.get(`${API_BASE_URL}/initiate?pdf_url=${translationData.data.attributes.pdf.pdfs[0].url}`);
         setConversationId(response.data.conversation_id);
       } catch (error) {
         console.error('Error initiating conversation:', error);
       }
+      
     };
 
     initiateConversation();
