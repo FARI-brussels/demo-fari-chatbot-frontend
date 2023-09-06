@@ -39,7 +39,6 @@ export default function PdfPage({ setNextPageHref, languages }) {
       fetchDataAndUpdateState();
     }, [languages]);
   
-  console.log(translation && translation.attributes.pdf.pdfs[1].title)
     return (
       <>
         <div className={styles.container}>

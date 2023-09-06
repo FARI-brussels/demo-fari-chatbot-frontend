@@ -32,7 +32,10 @@ function App({ Component, pageProps }) {
   const router = useRouter();
 
   const handleNextStep = () => {
-    router.push(nextPageHref);
+    console.log(nextPageHref)
+    if (nextPageHref) {
+      router.push(nextPageHref);
+  }
   };
 
   const resultPaths = ['/chat', '/pdf1', '/pdf2','/pdf3','/pdf4','/building','/headphone','/tortoise','/color'];
@@ -55,8 +58,7 @@ function App({ Component, pageProps }) {
           <GlobalInputProvider>
             <InputTypeProvider>
               <OutputTypeProvider>
-                <div className={styles.pageContainer}>
-                  
+                <div className={styles.pageContainer}>                  
                   <Component
                     {...pageProps}
                     setNextPageHref={setNextPageHref}
@@ -65,16 +67,13 @@ function App({ Component, pageProps }) {
                     languages={languages}
 
                   />
-                  {isResultPage ? null : !submitForm && (
                     <Footer
-                    setNextPageHref={setNextPageHref}
-                    setSubmitForm={setSubmitForm}
+                      setNextPageHref={setNextPageHref}
                       handleNextStep={handleNextStep}
                       disabled={!nextPageHref}
                       onSubmit={handleSubmitForm}
                       languages={languages}
                     />
-                  )}
                 </div>
               </OutputTypeProvider>
             </InputTypeProvider>

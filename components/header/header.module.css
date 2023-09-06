@@ -17,22 +17,6 @@
     text-decoration: none;
 }
 
-.previousBtn {
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    border: 1px solid #2F4FBB;
-    border-radius: 60px;
-    width: auto;
-    height: 40px;
-    color: #2F4FBB;
-    background-color: white;
-    padding: 10px 40px 10px 0px;
-}
-
 .disabledBtn {
     background: rgba(47, 79, 187, 0.4);
 }

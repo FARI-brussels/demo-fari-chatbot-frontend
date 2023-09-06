@@ -90,46 +90,6 @@ const Header = ({ setNextPageHref, setSubmitForm, languages, setLanguages, disab
                     {translation && translation.data.attributes.previous}
                 </button>
             </div>
-            <div className={styles.btnContainer}>
-                <div className={styles.btnWrapper}>
-                    <Link className={styles.link} href="/">
-                        <button onClick={() => handleResetPathValue(null)} className={styles.homeBtn}>
-                            <Image className={styles.icon} alt="house" src="/static/house-light.svg" width={24} height={24} />
-                            {translation && translation.data.attributes.home}
-                        </button>
-                    </Link>
-                </div>
-                <div className={styles.btnWrapper}>
-                    <button className={styles.languageBtn}>
-                        <Image className={styles.icon} alt="earth" src="/static/language-light.svg" width={24} height={24} />
-                        {languages === "en" ? <Image src="/static/united-kingdom.png" alt="england flag" width={20} height={20} /> : null}
-                        {languages === "fr-FR" ? <Image src="/static/france.png" alt="france flag" width={20} height={20} /> : null}
-                        {languages === "nl" ? <Image src="/static/netherlands.png" alt="netherlands flag" width={20} height={20} /> : null}
-                        <select
-                            className={styles.select}
-                            name="languages"
-                            onChange={handleLanguageChange}
-                            value={languages}
-                        >
-                            <option value="en" defaultValue="en">
-                                EN
-                            </option>
-                            <option value="fr-FR">
-                                FR
-                            </option>
-                            <option value="nl">
-                                NL
-                            </option>
-                        </select>
-                    </button>
-                </div>
-                <div className={styles.btnWrapper}></div>
-
-                <button className={styles.helpBtn}>
-                    <Image className={styles.icon} alt="question mark" src="/static/question-light.svg" width={24} height={24} />
-                    {translation && translation.data.attributes.help}
-                </button>
-            </div>
         </div>
     )
 }

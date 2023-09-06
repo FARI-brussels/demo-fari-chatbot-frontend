@@ -24,7 +24,8 @@
     height: 50px;
     color: #2F4FBB;
     background-color: white;
-    padding: 10px 40px 10px 0px;
+    padding: 10px 60px 10px 0px;
+    text-align: left;
 }
 
 
@@ -39,6 +40,12 @@
     border: none;
     background-color: #2F4FBB;
     color: white;
+}
+
+/* Disabled button style */
+.nextStepBtn:disabled {
+    background-color: gray;
+    cursor: not-allowed;
 }
 
 .disabledBtn {
@@ -56,6 +63,7 @@
     border: none;
     background-color: #2F4FBB;
     color: white;
+    
 }
 
 .icon {
